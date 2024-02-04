@@ -5,7 +5,11 @@ void main(){
   do{
     input = getCommand(info: 'Введите строку вида \"8 * 10\": ');
     if(input != 'exit')
-      doOp(input.trim());
+      try{
+        doOp(input.trim());}
+      catch(e){
+        stdout.writeln(e.toString());
+      }
     else
       stdout.write(input);
   }while(input != 'exit');
